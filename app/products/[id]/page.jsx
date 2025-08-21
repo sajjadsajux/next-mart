@@ -1,39 +1,30 @@
-"use client";
-import { useParams } from "next/navigation";
-import Link from "next/link";
+// app/products/[id]/page.jsx
+import { connectDB } from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 
-// For now, mock data
-const products = [
-  { id: 1, name: "Product 1", desc: "This is a great product.", price: 49.99 },
-  { id: 2, name: "Product 2", desc: "This is a great product.", price: 59.99 },
-  { id: 3, name: "Product 3", desc: "This is a great product.", price: 39.99 },
-  { id: 4, name: "Product 4", desc: "This is a great product.", price: 29.99 },
-];
+export default async function ProductPage({ params }) {
+  const db = await connectDB();
+  const { id } = params;
 
-export default function ProductDetailsPage() {
-  const params = useParams();
-  const productId = parseInt(params.id);
+  // Validate the ID
+  if (!ObjectId.isValid(id)) {
+    return <p className="text-center text-xl mt-20">Invalid product ID</p>;
+  }
 
-  const product = products.find((p) => p.id === productId);
+  // find product by its MongoDB ObjectId
+  const product = await db.collection("products").findOne({ _id: new ObjectId(id) });
 
   if (!product) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <h2 className="text-2xl font-bold">Product not found</h2>
-      </div>
-    );
+    return <p className="text-center text-xl mt-20">Product not found</p>;
   }
 
   return (
-    <div className="min-h-screen py-20 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-6">{product.name}</h1>
-        <p className="text-gray-700 mb-4">{product.desc}</p>
-        <p className="text-2xl font-semibold mb-6">${product.price}</p>
-        <Link href="/products">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Back to Products</button>
-        </Link>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <img src={product.image} alt={product.name} className="w-96 h-96 object-cover mb-6 rounded" />
+      <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+      <p className="mb-4 text-gray-700">{product.description}</p>
+      <p className="text-xl font-semibold text-green-600 mb-6">${product.price}</p>
+      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
     </div>
   );
 }
