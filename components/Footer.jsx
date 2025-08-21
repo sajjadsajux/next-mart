@@ -1,17 +1,32 @@
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-6 mt-12">
+    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-8 ">
       <div className="container mx-auto px-4 text-center">
-        <p className="text-sm">&copy; {new Date().getFullYear()} SciC Store. All rights reserved.</p>
-        <div className="flex justify-center mt-2 space-x-4">
-          <a href="#" className="hover:underline">
+        <p className="text-sm mb-4">&copy; {new Date().getFullYear()} NEXT Mart. All rights reserved.</p>
+
+        <div className="flex justify-center gap-6 mb-4">
+          <a href="#" className="hover:text-blue-500 transition-colors">
             Privacy Policy
           </a>
-          <a href="#" className="hover:underline">
+          <a href="#" className="hover:text-blue-500 transition-colors">
             Terms of Service
           </a>
-          <a href="#" className="hover:underline">
+          <a href="#" className="hover:text-blue-500 transition-colors">
             Contact
+          </a>
+        </div>
+
+        <div className="flex justify-center gap-4 text-xl">
+          <a href="#" className="hover:text-blue-600 transition-colors">
+            <FaFacebookF />
+          </a>
+          <a href="#" className="hover:text-blue-400 transition-colors">
+            <FaTwitter />
+          </a>
+          <a href="#" className="hover:text-pink-500 transition-colors">
+            <FaInstagram />
           </a>
         </div>
       </div>
