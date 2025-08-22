@@ -9,8 +9,10 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/login", // Redirect to your login page
+    signIn: "/login", // optional
   },
+  debug: true, // ✅ here
+  secret: process.env.NEXTAUTH_SECRET, // must be set
 };
 
 const handler = NextAuth(authOptions);
