@@ -3,6 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 export default function MyProducts() {
   const { data: session } = useSession();
@@ -30,16 +31,42 @@ export default function MyProducts() {
 
   // Delete product
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this product?")) return;
-
-    try {
-      const res = await fetch(`/api/products/${id}`, { method: "DELETE" });
-      if (res.ok) {
-        setProducts(products.filter((p) => p._id !== id));
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const res = await fetch(`/api/products/${id}`, { method: "DELETE" });
+          if (res.ok) {
+            setProducts((prev) => prev.filter((p) => p._id !== id));
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your product has been deleted.",
+              icon: "success",
+            });
+          } else {
+            Swal.fire({
+              title: "Error!",
+              text: "Something went wrong while deleting.",
+              icon: "error",
+            });
+          }
+        } catch (err) {
+          console.error(err);
+          Swal.fire({
+            title: "Error!",
+            text: "Server error. Try again later.",
+            icon: "error",
+          });
+        }
       }
-    } catch (err) {
-      console.error(err);
-    }
+    });
   };
 
   if (!session) return <p className="p-6">Please login to see your products.</p>;
