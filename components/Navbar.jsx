@@ -21,7 +21,16 @@ export default function Navbar() {
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
               <Link href="/products">Products</Link>
+            </li>
+            <li>
+              <Link href="/about">About NEXT Mart</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
             {session && (
               <li>
@@ -70,16 +79,25 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
             <Link href="/products">Products</Link>
+          </li>
+          <li>
+            <Link href="/about">About NEXT Mart</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
           </li>
 
           {mounted && session && (
             <li tabIndex={0} className="dropdown dropdown-hover relative">
               <button className=" ">Dashboard</button>
               <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-1">
-                <li>
+                {/* <li>
                   <Link href="/dashboard">Overview</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/dashboard/add-product">Add Product</Link>
                 </li>
