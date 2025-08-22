@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
@@ -7,15 +8,15 @@ export default function Footer() {
         <p className="text-sm mb-4">&copy; {new Date().getFullYear()} NEXT Mart. All rights reserved.</p>
 
         <div className="flex justify-center gap-6 mb-4">
-          <a href="#" className="hover:text-blue-500 transition-colors">
+          <Link href="/privacy" className="hover:text-blue-500 transition-colors">
             Privacy Policy
-          </a>
-          <a href="#" className="hover:text-blue-500 transition-colors">
+          </Link>
+          <Link href="/terms" className="hover:text-blue-500 transition-colors">
             Terms of Service
-          </a>
-          <a href="#" className="hover:text-blue-500 transition-colors">
+          </Link>
+          <Link href="/contact" className="hover:text-blue-500 transition-colors">
             Contact
-          </a>
+          </Link>
         </div>
 
         <div className="flex justify-center gap-4 text-xl">

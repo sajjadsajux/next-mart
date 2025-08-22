@@ -27,9 +27,9 @@ export default function Navbar() {
               <li>
                 <a>Dashboard</a>
                 <ul className="p-2">
-                  <li>
+                  {/* <li>
                     <Link href="/dashboard">Overview</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link href="/dashboard/add-product">Add Product</Link>
                   </li>
