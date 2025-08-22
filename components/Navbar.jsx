@@ -45,9 +45,9 @@ export default function Navbar() {
                   <li>
                     <Link href="/dashboard/my-products">My Products</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/dashboard/orders">Orders</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
             )}
@@ -104,9 +104,9 @@ export default function Navbar() {
                 <li>
                   <Link href="/dashboard/my-products">My Products</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/dashboard/orders">Orders</Link>
-                </li>
+                </li> */}
               </ul>
             </li>
           )}

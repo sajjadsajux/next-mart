@@ -15,7 +15,7 @@ export default async function ProductPage({ params }) {
   const product = await db.collection("products").findOne({ _id: new ObjectId(id) });
 
   if (!product) {
-    return <p className="text-center text-xl mt-20">Product not found</p>;
+    return <p className="text-center text-xl mt-20 ">Product not found</p>;
   }
 
   return (

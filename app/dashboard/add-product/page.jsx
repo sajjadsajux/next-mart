@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { Bounce, toast } from "react-toastify";
 
 export default function AddProductPage() {
   const { data: session, status } = useSession();
@@ -43,11 +44,23 @@ export default function AddProductPage() {
 
       if (!res.ok) throw new Error(result.error || "Failed to add product");
 
-      alert("Product added successfully");
+      toast.success("Product Uploaded Successfully !", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        theme: "colored",
+        transition: Bounce,
+      });
+
       form.reset();
     } catch (error) {
       console.error(error);
-      alert("Failed to add product");
+      toast.error("Failed to upload.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        theme: "colored",
+      });
     }
   };
 

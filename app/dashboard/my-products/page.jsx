@@ -43,7 +43,6 @@ export default function MyProducts() {
   };
 
   if (!session) return <p className="p-6">Please login to see your products.</p>;
-  if (loading) return <p className="p-6">Loading...</p>;
 
   return (
     <div className="min-h-screen bg-gray-100 py-10">
