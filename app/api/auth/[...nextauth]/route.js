@@ -9,7 +9,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/login", // optional
+    signIn: "/products", // optional
   },
   debug: true, // ✅ here
   secret: process.env.NEXTAUTH_SECRET, // must be set
