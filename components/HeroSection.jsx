@@ -58,9 +58,7 @@ export default function HeroSection() {
           {/* Main Heading */}
           <div className={`transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-pulse">NEXT</span>
-              <br />
-              <span className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">Mart</span>
+              <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-pulse">NEXT Mart</span>
             </h1>
           </div>
 
@@ -73,7 +71,7 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <Link href="/products">
                 <button className="group relative px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-pink-500 to-violet-500 rounded-full overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 focus:outline-none focus:ring-4 focus:ring-purple-300">
                   <span className="relative z-10">Explore Products</span>
@@ -116,7 +114,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
         </div>

@@ -10,7 +10,7 @@ export default function Navbar() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar  container mx-auto">
       <div className="navbar-start">
         {/* Mobile Dropdown */}
         <div className="dropdown">
@@ -66,32 +66,30 @@ export default function Navbar() {
           NEXT MART
         </Link>
       </div>
-
-      {/* Desktop Menu */}
+      {/* desktop */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link href="/products">Products</Link>
           </li>
+
           {mounted && session && (
-            <li tabIndex={0}>
-              <details className="group relative">
-                <summary className="cursor-pointer">Dashboard</summary>
-                <ul className="absolute hidden group-open:block bg-base-100 shadow mt-1 rounded w-52 p-2 z-50">
-                  <li>
-                    <Link href="/dashboard">Overview</Link>
-                  </li>
-                  <li>
-                    <Link href="/dashboard/add-product">Add Product</Link>
-                  </li>
-                  <li>
-                    <Link href="/dashboard/my-products">My Products</Link>
-                  </li>
-                  <li>
-                    <Link href="/dashboard/orders">Orders</Link>
-                  </li>
-                </ul>
-              </details>
+            <li tabIndex={0} className="dropdown dropdown-hover relative">
+              <button className=" ">Dashboard</button>
+              <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-1">
+                <li>
+                  <Link href="/dashboard">Overview</Link>
+                </li>
+                <li>
+                  <Link href="/dashboard/add-product">Add Product</Link>
+                </li>
+                <li>
+                  <Link href="/dashboard/my-products">My Products</Link>
+                </li>
+                <li>
+                  <Link href="/dashboard/orders">Orders</Link>
+                </li>
+              </ul>
             </li>
           )}
         </ul>

@@ -3,29 +3,24 @@ import { connectDB } from "@/lib/mongodb";
 export async function POST(req) {
   try {
     const db = await connectDB();
-    const body = await req.json();
+    const data = await req.json(); // full data from frontend
 
-    const { name, description, price, image, category, stock } = body;
-
-    if (!name || !description || !price) {
+    // Validate required fields
+    if (!data.name || !data.description || !data.price) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400 });
     }
 
-    const product = {
-      name,
-      description,
-      price: parseFloat(price),
-      image: image || "",
-      category: category || "",
-      stock: stock ? parseInt(stock) : 0,
-      createdAt: new Date(),
-    };
+    // Ensure numeric fields are properly typed
+    data.price = parseFloat(data.price);
+    data.stock = data.stock ? parseInt(data.stock) : 0;
 
-    const result = await db.collection("products").insertOne(product);
+    // Ensure createdAt is a Date object
+    data.createdAt = data.createdAt ? new Date(data.createdAt) : new Date();
 
-    return new Response(JSON.stringify({ message: "Product added", id: result.insertedId }), {
-      status: 201,
-    });
+    // Insert full data object into MongoDB
+    const result = await db.collection("products").insertOne(data);
+
+    return new Response(JSON.stringify({ message: "Product added", id: result.insertedId }), { status: 201 });
   } catch (error) {
     console.error("Error adding product:", error);
     return new Response(JSON.stringify({ error: "Failed to add product" }), { status: 500 });
