@@ -56,17 +56,31 @@ npm start
 | `*`                      | Custom 404 / Not Found page      |
 
 # Features
+### 1. Authentication
 
-- Seamless Google Login – Secure one-click authentication using Google OAuth.
+- Seamless Google Login – Secure one-click sign-in for all users.
 
-- Smart Product Management – Store and manage products effortlessly with MongoDB
+- User-specific Access – Only authenticated users can add or manage their products.
 
-- Modern UI/UX – Fully responsive interface built with Tailwind CSS for a clean and consistent experience
+### 2. Product Management
 
-- Rich Product Details – Add products with images, categories, stock levels, and uploader information
+- Personalized Dashboard – Users can add, edit, and delete their own products.
 
-- Dynamic Highlights – Showcase latest uploaded products on the homepage in real time
-- Robust Error Handling – Custom error and loading pages for a smooth user journey
+- Rich Product Details – Each product includes images, categories, stock levels, and uploader info.
+
+- Dynamic Highlights – Latest uploaded products automatically appear on the homepage.
+
+### 3. UI/UX & Design
+
+- Modern & Responsive Interface – Built with Tailwind CSS and DaisyUI for mobile-friendly, consistent design.
+
+- Interactive Buttons & Feedback – Smooth animations, toast notifications, and confirmation modals for actions.
+
+### 4. Reliability & User Experience
+
+- Custom Error Handling – Dedicated 404, error, and loading pages for a seamless experience.
+
+- Robust Data Handling – MongoDB integration ensures fast, reliable storage and retrieval of products.
 
 > This project is still in progress, and I’m always open to new ideas.
 > 💡 If you have any suggestions or feedback on how I can improve Next Mart, feel free to share!
