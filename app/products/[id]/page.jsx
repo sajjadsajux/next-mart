@@ -19,7 +19,7 @@ export default async function ProductPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-2">
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow-lg p-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Product Image */}

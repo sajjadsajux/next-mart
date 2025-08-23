@@ -57,17 +57,16 @@ npm start
 
 # Features
 
-- Google OAuth authentication
+- Seamless Google Login – Secure one-click authentication using Google OAuth.
 
-- MongoDB integration for product storage
+- Smart Product Management – Store and manage products effortlessly with MongoDB
 
-- Responsive UI with Tailwind CSS / DaisyUI
+- Modern UI/UX – Fully responsive interface built with Tailwind CSS for a clean and consistent experience
 
-- Add products with image, category, stock, and uploader info
+- Rich Product Details – Add products with images, categories, stock levels, and uploader information
 
-- Dynamic featured products on homepage
-
-- Error and loading pages
+- Dynamic Highlights – Showcase latest uploaded products on the homepage in real time
+- Robust Error Handling – Custom error and loading pages for a smooth user journey
 
 > This project is still in progress, and I’m always open to new ideas.
 > 💡 If you have any suggestions or feedback on how I can improve Next Mart, feel free to share!

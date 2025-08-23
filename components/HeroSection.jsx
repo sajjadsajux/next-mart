@@ -70,7 +70,7 @@ export default function HeroSection() {
           </div>
 
           {/* CTA Buttons */}
-          <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <div className={`transform transition-all duration-1000 delay-500  ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <Link href="/products">
                 <button className="group relative px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-pink-500 to-violet-500 rounded-full overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 focus:outline-none focus:ring-4 focus:ring-purple-300">
@@ -89,7 +89,7 @@ export default function HeroSection() {
           </div>
 
           {/* Feature highlights */}
-          <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <div className={`transform transition-all duration-1000 delay-700 mb-4 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="group p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transform hover:scale-105 transition-all duration-300">
                 <div className="w-8 h-8 mx-auto mb-4 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">🚚</div>
@@ -114,7 +114,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
         </div>
